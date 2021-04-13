@@ -34,4 +34,8 @@ jobs:
       - run: npm install -g @angular/cli > /dev/null
 
       - name: 'Production Build'
-      - run: 'ng build --prod --output-path=dist'
+      - run: 'ng build --prod --output-path=dist' 
+        with: 
+          dir: dist
+          branch: master
+          token: ${{ secrets.TOKEN_FOR_ANGULAR_WORKFLOWS }}
