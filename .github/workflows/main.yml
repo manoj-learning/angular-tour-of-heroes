@@ -21,21 +21,22 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checkout the code
-      - uses: actions/checkout@v2
+        uses: actions/checkout@v2
+
       - name: Setup Node JS
-      - uses: actions/setup-node@v1
+        uses: actions/setup-node@v1
         with:
         node-version: "12.x"
 
       - name: "Install NPM Packages"
-      - run: npm install
+        run: npm install
 
       - name: "Install Angular CLI"
-      - run: npm install -g @angular/cli > /dev/null
+        run: npm install -g @angular/cli > /dev/null
 
       - name: "Production Build"
-      - run: "ng build --prod --output-path=dist"
-        with:
-          dir: dist
-          branch: master
-          token: ${{ secrets.TOKEN_FOR_ANGULAR_WORKFLOWS }}
+        run: "ng build --prod --output-path=dist"
+         with:
+           dir: dist
+           branch: master
+           token: ${{ secrets.TOKEN_FOR_ANGULAR_WORKFLOWS }}
