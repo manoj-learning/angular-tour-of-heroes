@@ -28,14 +28,14 @@ jobs:
         with:
         node-version: "12.x"
 
-      - name: "Install NPM Packages"
+      - name: Install NPM Packages
         run: npm install
 
-      - name: "Install Angular CLI"
+      - name: Install Angular CLI
         run: npm install -g @angular/cli > /dev/null
 
-      - name: "Production Build"
-        run: "ng build --prod --output-path=dist"
+      - name: Production Build
+        run: ng build --prod --output-path=dist
          with:
            dir: dist
            branch: master
