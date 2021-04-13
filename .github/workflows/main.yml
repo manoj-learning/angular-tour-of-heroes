@@ -36,7 +36,7 @@ jobs:
 
       - name: Production Build
         run: ng build --prod --output-path=dist
-         with:
-           dir: dist
-           branch: master
-           token: ${{ secrets.TOKEN_FOR_ANGULAR_WORKFLOWS }}
+        with:
+          dir: dist
+          branch: master
+          token: ${{ secrets.TOKEN_FOR_ANGULAR_WORKFLOWS }}
